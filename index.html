@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>vue-demo3</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>v-if：隐藏的时候不占位</h1>
+
+		<button @click="error=!error">Error</button>
+		<button @click="success=!success">Success</button>
+
+		<p v-if="error">网络连接错误：404</p>
+		<p v-else-if="success">网络连接成功：200</p>
+		<p v-else=true>无信息</p>
+
+		<hr>
+
+		<h1>v-show:显示和隐藏的时候是占位的，实际上是display标签</h1>
+		<p v-show="error">111111</p>
+
+		<hr>
+
+		<h1>v-for:v-for="(value, key, index) in object"遍历对象
+				  v-for="(item,index) in items"	遍历数组
+				  template:一个不可见的包裹元素
+		</h1>
+
+		<ul>
+			<h2>通过数组下标取值</h2>
+			<li>{{characters[0]}} </li>
+			<li>{{characters[1]}} </li>
+			<li>{{characters[2]}}</li>
+
+
+			<h2>简单的遍历数组</h2>
+			<li v-for="character in characters">
+				{{character}}
+			</li>
+		</ul>
+		
+		<ul>
+			<h2>对象的遍历</h2>
+			<li v-for="(value,key,index) in user">
+				{{index}}.{{key}}:{{value}}
+			</li>
+				
+			</li>
+
+			<h2>数组的遍历</h2>
+			<li v-for="(user,index) in users">
+				{{index}}.{{user.name}}
+			</li>
+				
+			</li>
+
+
+			<h2>数组中的对象的遍历</h2>
+			<li v-for="(user,index) in users">
+				对象索引：{{index}}—对象：{{user}}
+				<span v-for="(value,key,index) in user"><br>
+					属性索引:{{index}}<br>
+					属性名称：{{key}}<br>
+					属性值：{{value}}
+				</span>
+			</li>
+			<template>11</template>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
