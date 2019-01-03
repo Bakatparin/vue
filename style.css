@@ -1,0 +1,28 @@
+#face{
+	width:320px;
+	height: 250px;
+	margin:0 auto;
+	background: url(img/xiao.jpg) center no-repeat;
+	background-size: 80%;
+}
+
+#face.cry{
+	background-image: url(img/ku.jpg);
+}
+
+#bar{
+	width:256px;
+	border: 1px blue solid;
+	margin:10px auto 20px auto;
+}
+#bar div{
+	height: 20px;
+	background: crimson;
+}
+#control{
+	width:200px;
+	margin: 0 auto;
+}
+#control button{
+	margin-left: 20px;
+}
